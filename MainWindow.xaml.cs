@@ -299,7 +299,8 @@ namespace TCP_Listener_and_Client
             try
             {
                 windowClosed = true;//don't accept client because listener will be stopped
-                listener.Stop();//stop listener
+                if(listener != null)
+                    listener.Stop();//stop listener
 
                 lock (clientLock)
                 {
