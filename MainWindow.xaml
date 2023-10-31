@@ -7,8 +7,11 @@
         mc:Ignorable="d"
         Title="TCP Listener and Client" Height="600" Width="1000" ResizeMode="NoResize" Closed="Window_Closed">
     <Grid>
-        <GroupBox Header="Listener" HorizontalAlignment="Left" Height="525" Margin="10,10,0,0" VerticalAlignment="Top" Width="443">
-            <Grid>
+        <GroupBox Header="Listener" HorizontalAlignment="Left" Height="525" Margin="26,10,0,0" VerticalAlignment="Top" Width="443">
+            <GroupBox.Effect>
+                <DropShadowEffect Color="Gainsboro" ShadowDepth="1"/>
+            </GroupBox.Effect>
+            <Grid Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
                 <Label Content="PORT: " HorizontalAlignment="Left" Margin="51,14,0,0" VerticalAlignment="Top" Height="27"/>
                 <TextBox x:Name="serverPortTextBox" HorizontalAlignment="Left" Height="23" Margin="101,18,0,0" TextWrapping="Wrap" Text="8080" VerticalAlignment="Top" Width="61"/>
                 <Button Click="listenButton_Click" Cursor="Hand" x:Name="listenButton" IsEnabled="True"  Background="#FF06B025"   BorderThickness="1" Content="LISTEN" FontWeight="Bold" FontSize="14" Foreground="White" Margin="206,16,152,451" >
@@ -24,11 +27,11 @@
                 <Separator HorizontalAlignment="Left" Height="26" Margin="22,56,0,0" VerticalAlignment="Top" Width="383"/>
                 <ComboBox SelectionChanged="serverCombo_SelectionChanged" IsEnabled="False" x:Name="serverCombo" HorizontalAlignment="Left" Margin="178,87,0,0" VerticalAlignment="Top" Width="120"/>
                 <Label Content="SelectClient: " HorizontalAlignment="Left" Margin="84,87,0,0" VerticalAlignment="Top" Height="23"/>
-                <RichTextBox VerticalScrollBarVisibility="Auto" IsEnabled="False" x:Name="serverRichTextBox" HorizontalAlignment="Left" Height="246" Margin="22,242,0,0" VerticalAlignment="Top" Width="399">
+                <RichTextBox BorderBrush="Blue" VerticalScrollBarVisibility="Auto" IsEnabled="False" x:Name="serverRichTextBox" HorizontalAlignment="Left" Height="246" Margin="22,242,0,0" VerticalAlignment="Top" Width="399">
 
                 </RichTextBox>
-                <Label Content="Messages " HorizontalAlignment="Left" Margin="147,209,0,0" VerticalAlignment="Top" Height="28"/>
-                <TextBox IsEnabled="False" x:Name="serverTextBox" HorizontalAlignment="Left" Height="46" Margin="22,127,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="383" KeyDown="serverTextBox_KeyDown">
+                <Label HorizontalContentAlignment="Center" Content="Messages " HorizontalAlignment="Left" Margin="22,209,0,0" VerticalAlignment="Top" Height="28" Width="399"/>
+                <TextBox BorderBrush="Green" IsEnabled="False" x:Name="serverTextBox" HorizontalAlignment="Left" Height="46" Margin="22,127,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="383" KeyDown="serverTextBox_KeyDown">
                     <TextBox.Style>
                         <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                             <Style.Resources>
@@ -65,8 +68,11 @@
                 </Button>
             </Grid>
         </GroupBox>
-        <GroupBox Header="Client" HorizontalAlignment="Left" Height="525" Margin="539,10,0,0" VerticalAlignment="Top" Width="443">
-            <Grid>
+        <GroupBox Header="Client" HorizontalAlignment="Left" Height="525" Margin="521,10,0,0" VerticalAlignment="Top" Width="443">
+            <GroupBox.Effect>
+                <DropShadowEffect Color="Gainsboro" ShadowDepth="1"/>
+            </GroupBox.Effect>
+            <Grid Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
                 <Label Content="PORT: " HorizontalAlignment="Left" Margin="37,55,0,0" VerticalAlignment="Top" Height="27"/>
                 <TextBox x:Name="clientPortTextBox" HorizontalAlignment="Left" Height="23" Margin="87,59,0,0" TextWrapping="Wrap" Text="8080" VerticalAlignment="Top" Width="79"/>
                 <Button Cursor="Hand" x:Name="connectButton" IsEnabled="True"  Background="#FF06B025"   BorderThickness="1" Content="CONNECT" FontWeight="Bold" FontSize="14" Foreground="White" Margin="186,32,149,435" Click="connectButton_Click" >
@@ -80,9 +86,9 @@
                     </Button.Effect>
                 </Button>
                 <Separator HorizontalAlignment="Left" Height="26" Margin="22,96,0,0" VerticalAlignment="Top" Width="383"/>
-                <RichTextBox VerticalScrollBarVisibility="Auto" IsEnabled="False" x:Name="clientRichTextBox" HorizontalAlignment="Left" Height="246" Margin="22,242,0,0" VerticalAlignment="Top" Width="399"/>
-                <Label Content="Messages " HorizontalAlignment="Left" Margin="147,209,0,0" VerticalAlignment="Top" Height="28"/>
-                <TextBox  x:Name="clientTextBox" IsEnabled="False" HorizontalAlignment="Left" Height="46" Margin="22,127,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="383" KeyDown="clientTextBox_KeyDown">
+                <RichTextBox BorderBrush="Blue" VerticalScrollBarVisibility="Auto" IsEnabled="False" x:Name="clientRichTextBox" HorizontalAlignment="Left" Height="246" Margin="22,242,0,0" VerticalAlignment="Top" Width="399"/>
+                <Label HorizontalContentAlignment="Center" Content="Messages " HorizontalAlignment="Left" Margin="22,209,0,0" VerticalAlignment="Top" Height="28" Width="399"/>
+                <TextBox BorderBrush="Green"  x:Name="clientTextBox" IsEnabled="False" HorizontalAlignment="Left" Height="46" Margin="22,127,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="383" KeyDown="clientTextBox_KeyDown">
                     <TextBox.Style>
                         <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                             <Style.Resources>
